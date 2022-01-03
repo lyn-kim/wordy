@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "attr-duplication": true,
+    "character-reference": true,
+    "deprecated-attr": true,
+    "deprecated-element": true,
+    "doctype": true,
+    "id-duplication": true,
+    "permitted-contents": true,
+    "required-attr": true,
+    "invalid-attr": true,
+    "landmark-roles": true,
+    "required-h1": false,
+    "wai-aria": true,
+    "class-naming": "/.+/",
+    "attr-equal-space-after": true,
+    "attr-equal-space-before": true,
+    "attr-spacing": true,
+    "attr-value-quotes": true,
+    "case-sensitive-attr-name": true,
+    "case-sensitive-tag-name": true,
+    "indentation": 2
+  },
+  "nodeRules": [
+    {
+      "selector": "link",
+      "rules": {
+        "character-reference": false
+      }
+    },
+    {
+      "selector": "img",
+      "rules": {
+        "character-reference": false
+      }
+    },
+    {
+      "selector": "a",
+      "rules": {
+        "character-reference": false
+      }
+    }
+  ],
+  "childNodeRules": [
+    {
+      "selector": "html",
+      "inheritance": false,
+      "rules": {
+        "indentation": false
+      }
+    }
+  ]
+}
