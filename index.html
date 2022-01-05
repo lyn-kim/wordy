@@ -27,15 +27,43 @@
     <!-- end of navbar -->
 
     <!-- main page with generate button -->
-    <div class="row" data-view="main-page">
-      <div class="center">
+    <div class="row hidden" data-view="main-page">
+      <div class="margin-auto">
         <h2 class="home-text">Let's get started:</h2>
-        <div class="click-here-btn center">
+        <div class="click-here-btn margin-auto">
           <p class="click-here-text">Click Here!</p>
         </div>
       </div>
     </div>
     <!-- end of main page with generate button -->
+
+    <!-- new word page -->
+    <div class="container">
+      <div class="row" data-view="new-word">
+        <!-- word card -->
+        <div class="column-full card-container">
+          <div class="row card-container-inner">
+            <div class="column-full">
+              <p class="generated-word">Some Word</p>
+            </div>
+            <div class="column-full">
+              <hr class="break-line">
+            </div>
+            <div class="column-full definition-column">
+              <p class="generated-def">Some Definition</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- save button -->
+      <div class="row">
+        <div class="column-full">
+          <button class="save-button" type="button"><a class="save-button-txt">SAVE</a></button>
+        </div>
+      </div>
+      <!-- end of save button -->
+    </div>
+    <!-- end of new word page -->
 
   </main>
 
