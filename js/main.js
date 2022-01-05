@@ -29,3 +29,9 @@ function getNewWord() {
   });
   xhr.send();
 }
+
+var saveButton = document.querySelector('.save-button');
+saveButton.addEventListener('click', storeWord);
+function storeWord(event) {
+  // console.log('event.target:', event.target);
+}

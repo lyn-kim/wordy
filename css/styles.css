@@ -1,5 +1,5 @@
 * {
-  color: #645a5a;
+  color: #584e4e;
   font-family: "Varela Round", sans-serif;
 }
 
@@ -87,6 +87,7 @@ hr {
 
 .generated-word {
   text-align: center;
+  padding: 1.7rem 0;
   font-size: 2.1rem;
 }
 
