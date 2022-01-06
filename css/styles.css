@@ -1,5 +1,5 @@
 * {
-  color: #504646;
+  color: #584e4e;
   font-family: "Varela Round", sans-serif;
 }
 
@@ -7,11 +7,14 @@
   justify-content: space-between;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .center {
   justify-content: center;
   align-items: center;
-  margin: auto;
-  text-align: center;
+  align-self: center;
 }
 
 .logo-font {
@@ -58,4 +61,60 @@
   opacity: 0.9;
   padding-top: 5.7rem;
   font-size: 36px;
+}
+
+.card-container {
+  height: 590px;
+  margin-top: 30px;
+  padding: 1.5rem;
+  border: 3px solid #fdb900;
+  border-radius: 18px;
+}
+
+.card-container-inner {
+  flex-direction: column;
+  height: 100%;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #fdb900;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.generated-word {
+  text-align: center;
+  padding: 1.7rem 0;
+  font-size: 2.1rem;
+}
+
+.generated-def {
+  text-align: center;
+  font-size: 1.4rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.definition-column {
+  flex: 1;
+}
+
+.save-button {
+  width: 100%;
+  background-color: #fdb900;
+  color: #645a5a;
+  border: none;
+  margin-top: 1.7rem;
+  height: 4.2rem;
+  border-radius: 18px;
+}
+
+.save-button-txt {
+  font-size: 2rem;
 }

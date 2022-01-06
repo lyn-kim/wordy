@@ -27,17 +27,8 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
-    max-width: 730px;
-  }
-
-  .column-full,
-  .column-half {
-    padding: 0 0.75rem;
-  }
-
-  .column-half {
-    width: 50%;
+    min-width: 400px;
   }
 }

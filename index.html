@@ -19,23 +19,45 @@
         <div class="row space-between">
           <h1 class="nav-logo logo-font">Wordy</h1>
           <ul>
-            <li class="nav-links"><a href="">Home</a></li>
+            <li class="nav-links home-button"><a>Home</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <!-- end of navbar -->
 
     <!-- main page with generate button -->
     <div class="row" data-view="main-page">
-      <div class="center">
+      <div class="margin-auto">
         <h2 class="home-text">Let's get started:</h2>
-        <div class="click-here-btn center">
+        <div class="click-here-btn margin-auto">
           <p class="click-here-text">Click Here!</p>
         </div>
       </div>
     </div>
-    <!-- end of main page with generate button -->
+
+    <!-- new word page -->
+    <div class="container">
+      <div class="row hidden" data-view="new-word">
+        <!-- word card -->
+        <div class="column-full card-container">
+          <div class="row card-container-inner">
+            <div class="column-full">
+              <p class="generated-word"> </p>
+            </div>
+            <div class="column-full">
+              <hr class="break-line">
+            </div>
+            <div class="column-full definition-column">
+              <p class="generated-def"> </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full">
+          <button class="save-button" type="button"><a class="save-button-txt">SAVE</a></button>
+        </div>
+      </div>
+      <!-- save button -->
+    </div>
 
   </main>
 
