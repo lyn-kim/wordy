@@ -4,7 +4,6 @@ var data = {
   view: 'main-page',
   rejectedCard: [],
   savedCard: [],
-  allCards: [],
   currentRandomCard: null,
   currentStudyCard: null,
   nextWordId: 1

@@ -12,7 +12,6 @@ function generateWord(event) {
     wordId: data.nextWordId++
   };
 
-  data.allCards.push(cardGenerated);
   return cardGenerated;
 }
 
