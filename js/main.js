@@ -1,8 +1,19 @@
+
 var clickHereButton = document.querySelector('.click-here-btn');
 clickHereButton.addEventListener('click', generateWord);
 function generateWord(event) {
   getNewWord();
   goToNewWord();
+  var word = data.currentRandomCard.word;
+  var definition = data.currentRandomCard.definition;
+  var cardGenerated = {
+    word: word,
+    definition: definition,
+    wordId: data.nextWordId++
+  };
+
+  data.allCards.push(cardGenerated);
+  return cardGenerated;
 }
 
 function goToNewWord() {
@@ -21,17 +32,29 @@ function switchView(dataView) {
   }
 }
 
+var wordElement = document.querySelector('.generated-word');
+var definitionElement = document.querySelector('.generated-def');
+
 function getNewWord() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://random-words-api.vercel.app/word');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    data.currentRandomCard = xhr.response[0];
+    definitionElement.textContent = data.currentRandomCard.definition;
+    wordElement.textContent = data.currentRandomCard.word;
   });
   xhr.send();
 }
 
 var saveButton = document.querySelector('.save-button');
-saveButton.addEventListener('click', storeWord);
-function storeWord(event) {
-  // console.log('event.target:', event.target);
+saveButton.addEventListener('click', saveWord);
+function saveWord(event) {
+  data.savedCard.push(data.currentRandomCard);
+}
+
+var homeButton = document.querySelector('.home-button');
+homeButton.addEventListener('click', goToHome);
+function goToHome(event) {
+  switchView('main-page');
 }
