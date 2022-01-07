@@ -4,6 +4,7 @@ clickHereButton.addEventListener('click', generateWord);
 function generateWord(event) {
   getNewWord();
   goToNewWord();
+  checkEmptyList();
 }
 
 function goToNewWord() {
@@ -51,13 +52,19 @@ function saveWord(event) {
   };
   data.savedCard.push(cardGenerated);
   goToStudyList();
+  checkEmptyList();
+  singleWord.prepend(generateWordDom(cardGenerated));
 }
 
 var homeButton = document.querySelector('.home-button');
 homeButton.addEventListener('click', goToHome);
 function goToHome(event) {
   switchView('main-page');
+  checkEmptyList();
 }
+
+var listButton = document.querySelector('.list-button');
+listButton.addEventListener('click', goToStudyList);
 
 function generateWordDom(card) {
   var listItem = document.createElement('li');
@@ -77,7 +84,14 @@ function loadSingleWord(event) {
   for (var i = 0; i < data.savedCard.length; i++) {
     singleWord.prepend(generateWordDom(data.savedCard[i]));
   }
+  checkEmptyList();
 }
 
-var listButton = document.querySelector('.list-button');
-listButton.addEventListener('click', goToStudyList);
+var noWordMessage = document.querySelector('.message');
+function checkEmptyList() {
+  if (data.savedCard.length === 0) {
+    noWordMessage.className = 'message';
+  } else {
+    noWordMessage.className = 'message hidden';
+  }
+}

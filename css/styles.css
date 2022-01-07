@@ -145,3 +145,9 @@ hr {
   margin: 0.9rem 0;
   border-radius: 18px;
 }
+
+.message {
+  text-align: center;
+  font-weight: 400;
+  line-height: 0.5rem;
+}
