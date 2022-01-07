@@ -75,6 +75,9 @@ var singleWord = document.querySelector('.saved-word-list');
 window.addEventListener('DOMContentLoaded', loadSingleWord);
 function loadSingleWord(event) {
   for (var i = 0; i < data.savedCard.length; i++) {
-    singleWord.appendChild(generateWordDom(data.savedCard[i]));
+    singleWord.prepend(generateWordDom(data.savedCard[i]));
   }
 }
+
+var listButton = document.querySelector('.list-button');
+listButton.addEventListener('click', goToStudyList);

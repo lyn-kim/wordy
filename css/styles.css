@@ -28,13 +28,18 @@
   height: 65px;
 }
 
+ul.nav-list {
+  margin-top: 1.3rem;
+}
+
 .nav-links {
-  margin-top: 6px;
+  display: inline;
   list-style: none;
 }
 
 .nav-links > a {
   text-decoration: none;
+  margin-left: 1.4rem;
 }
 
 .home-text {
