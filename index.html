@@ -18,8 +18,9 @@
       <div class="container">
         <div class="row space-between">
           <h1 class="nav-logo logo-font">Wordy</h1>
-          <ul>
+          <ul class="nav-list">
             <li class="nav-links home-button"><a>Home</a></li>
+            <li class="nav-links list-button"><a>List</a></li>
           </ul>
         </div>
       </div>
@@ -56,7 +57,22 @@
           <button class="save-button" type="button"><a class="save-button-txt">SAVE</a></button>
         </div>
       </div>
-      <!-- save button -->
+    </div>
+
+    <!-- study list page -->
+    <div class="container">
+      <div class="row hidden" data-view="study-list">
+        <div class="column-full">
+          <h2 class="study-list-title">Study List</h2>
+          <ul class="saved-word-list">
+            <!-- DOM appends here -->
+
+          </ul>
+        </div>
+        <div class="message">
+          <p>Uh-oh! You have no words to study.</p>
+        </div>
+      </div>
     </div>
 
   </main>

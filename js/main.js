@@ -4,15 +4,7 @@ clickHereButton.addEventListener('click', generateWord);
 function generateWord(event) {
   getNewWord();
   goToNewWord();
-  var word = data.currentRandomCard.word;
-  var definition = data.currentRandomCard.definition;
-  var cardGenerated = {
-    word: word,
-    definition: definition,
-    wordId: data.nextWordId++
-  };
-
-  return cardGenerated;
+  checkEmptyList();
 }
 
 function goToNewWord() {
@@ -46,14 +38,60 @@ function getNewWord() {
   xhr.send();
 }
 
+function goToStudyList() {
+  switchView('study-list');
+}
+
 var saveButton = document.querySelector('.save-button');
 saveButton.addEventListener('click', saveWord);
 function saveWord(event) {
-  data.savedCard.push(data.currentRandomCard);
+  var cardGenerated = {
+    word: data.currentRandomCard.word,
+    definition: data.currentRandomCard.definition,
+    wordId: data.nextWordId++
+  };
+  data.savedCard.push(cardGenerated);
+  goToStudyList();
+  checkEmptyList();
+  singleWord.prepend(generateWordDom(cardGenerated));
 }
 
 var homeButton = document.querySelector('.home-button');
 homeButton.addEventListener('click', goToHome);
 function goToHome(event) {
   switchView('main-page');
+  checkEmptyList();
+}
+
+var listButton = document.querySelector('.list-button');
+listButton.addEventListener('click', goToStudyList);
+
+function generateWordDom(card) {
+  var listItem = document.createElement('li');
+  var wordText = document.createTextNode(card.word);
+  listItem.appendChild(wordText);
+  listItem.className = 'saved-word';
+
+  var wordId = card.wordId;
+  listItem.setAttribute('word-id', wordId);
+
+  return listItem;
+}
+
+var singleWord = document.querySelector('.saved-word-list');
+window.addEventListener('DOMContentLoaded', loadSingleWord);
+function loadSingleWord(event) {
+  for (var i = 0; i < data.savedCard.length; i++) {
+    singleWord.prepend(generateWordDom(data.savedCard[i]));
+  }
+  checkEmptyList();
+}
+
+var noWordMessage = document.querySelector('.message');
+function checkEmptyList() {
+  if (data.savedCard.length === 0) {
+    noWordMessage.className = 'message';
+  } else {
+    noWordMessage.className = 'message hidden';
+  }
 }
