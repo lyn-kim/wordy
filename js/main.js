@@ -95,3 +95,27 @@ function checkEmptyList() {
     noWordMessage.className = 'message hidden';
   }
 }
+
+var studyButton = document.querySelector('.study-button');
+studyButton.addEventListener('click', goToFlashCard);
+function goToFlashCard(event) {
+  switchView('flashcard-front');
+}
+
+var flipButton = document.querySelector('.flip-button');
+flipButton.addEventListener('click', goToDefinition);
+function goToDefinition(event) {
+  switchView('flashcard-rear');
+}
+
+var backButton = document.querySelector('.back-button');
+backButton.addEventListener('click', goBackToWord);
+function goBackToWord(event) {
+  switchView('flashcard-front');
+}
+
+var nextButton = document.querySelector('.next-button');
+nextButton.addEventListener('click', goToNextWord);
+function goToNextWord(event) {
+  switchView('flashcard-front');
+}

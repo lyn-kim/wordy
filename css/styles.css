@@ -17,6 +17,10 @@
   align-self: center;
 }
 
+.align-end {
+  text-align: end;
+}
+
 .logo-font {
   font-family: pacifico, sans-serif;
   font-weight: 400;
@@ -68,12 +72,20 @@ ul.nav-list {
   font-size: 36px;
 }
 
+.flashcard-word-container,
 .card-container {
   height: 590px;
   margin-top: 30px;
   padding: 1.5rem;
-  border: 3px solid #fdb900;
   border-radius: 18px;
+}
+
+.card-container {
+  border: 3px solid #fdb900;
+}
+
+.flashcard-word-container {
+  border: 3px solid #645a5a;
 }
 
 .card-container-inner {
@@ -81,13 +93,13 @@ ul.nav-list {
   height: 100%;
 }
 
-hr {
+.new-word-breakline {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #fdb900;
   margin: 1em 0;
   padding: 0;
+  border-top: 1px solid #fdb900;
 }
 
 .generated-word {
@@ -150,4 +162,76 @@ hr {
   margin: auto;
   font-weight: 400;
   line-height: 0.5rem;
+}
+
+.study-button {
+  width: 100%;
+  background-color: #fdb900;
+  color: #645a5a;
+  border: none;
+  margin-top: 1.7rem;
+  height: 4.2rem;
+  border-radius: 18px;
+}
+
+.study-button-txt {
+  font-size: 2rem;
+}
+
+.study-button-container {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 120px;
+  max-width: calc(730px - 3rem);
+}
+
+[data-view="study-list"] {
+  margin-bottom: 120px;
+}
+
+.flip-button {
+  width: 100%;
+  background-color: #645a5a;
+  border: none;
+  margin-top: 1.7rem;
+  height: 4.2rem;
+  border-radius: 18px;
+}
+
+.flip-button-txt {
+  color: white;
+  font-size: 2rem;
+}
+
+.back-button {
+  width: 95%;
+  background-color: #645a5a;
+  border: none;
+  margin-top: 1.7rem;
+  height: 4.2rem;
+  border-radius: 18px;
+}
+
+.back-button-txt {
+  color: white;
+  font-size: 2rem;
+}
+
+.next-button {
+  width: 95%;
+  background-color: #fdb900;
+  border: none;
+  margin-top: 1.7rem;
+  height: 4.2rem;
+  border-radius: 18px;
+}
+
+.next-button-txt {
+  color: #645a5a;
+  font-size: 2rem;
 }
