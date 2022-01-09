@@ -123,7 +123,7 @@ var nextButton = document.querySelector('.next-button');
 nextButton.addEventListener('click', goToNextWord);
 function goToNextWord(event) {
   switchView('flashcard-front');
-  if (savedCardIndex >= savedCardIndex.length) {
+  if (savedCardIndex >= data.savedCard.length) {
     savedCardIndex = 0;
   }
   openFlashCard();
