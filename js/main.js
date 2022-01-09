@@ -95,10 +95,14 @@ function checkEmptyList() {
     noWordMessage.className = 'message hidden';
   }
 }
+var savedCardIndex = 0;
+// var currentStudyWord = document.querySelectorAll('ul');
+// currentStudyWord.textContent = data.savedCard[savedCardIndex].word;
 
 var studyButton = document.querySelector('.study-button');
-studyButton.addEventListener('click', goToFlashCard);
-function goToFlashCard(event) {
+studyButton.addEventListener('click', openFlashCard);
+
+function openFlashCard(event) {
   switchView('flashcard-front');
 }
 
@@ -108,14 +112,19 @@ function goToDefinition(event) {
   switchView('flashcard-rear');
 }
 
-var backButton = document.querySelector('.back-button');
-backButton.addEventListener('click', goBackToWord);
-function goBackToWord(event) {
-  switchView('flashcard-front');
-}
-
 var nextButton = document.querySelector('.next-button');
 nextButton.addEventListener('click', goToNextWord);
 function goToNextWord(event) {
+  switchView('flashcard-front');
+  savedCardIndex++;
+  if (savedCardIndex >= savedCardIndex.length) {
+    savedCardIndex = 0;
+  }
+  // showFlashCard();
+}
+
+var backButton = document.querySelector('.back-button');
+backButton.addEventListener('click', goBackToWord);
+function goBackToWord(event) {
   switchView('flashcard-front');
 }
