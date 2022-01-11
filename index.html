@@ -46,7 +46,7 @@
               <p class="generated-word"> </p>
             </div>
             <div class="column-full">
-              <hr class="break-line">
+              <hr class="new-word-breakline">
             </div>
             <div class="column-full definition-column">
               <p class="generated-def"> </p>
@@ -66,11 +66,52 @@
           <h2 class="study-list-title">Study List</h2>
           <ul class="saved-word-list">
             <!-- DOM appends here -->
-
           </ul>
         </div>
         <div class="message">
           <p>Uh-oh! You have no words to study.</p>
+        </div>
+        <div class="study-button-container">
+          <button class="study-button" type="button"><a class="study-button-txt">STUDY</a></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- flashcard front/word view -->
+    <div class="container">
+      <div class="row hidden" data-view="flashcard-front">
+        <div class="column-full flashcard-word-container">
+          <div class="row card-container-inner center">
+            <div class="column-full">
+              <p class="generated-word study-word"> </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full">
+          <button class="flip-button" type="button"><a class="flip-button-txt">FLIP</a></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- flashcard rear/definition view -->
+    <div class="container">
+      <div class="row hidden" data-view="flashcard-rear">
+        <div class="column-full card-container">
+          <div class="row card-container-inner">
+            <div class="column-full definition-column">
+              <p class="generated-def study-def"> </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full">
+          <div class="row space-between">
+            <div class="column-half">
+              <button class="back-button" type="button"><a class="back-button-txt">BACK</a></button>
+            </div>
+            <div class="column-half align-end">
+              <button class="next-button" type="button"><a class="next-button-txt">NEXT</a></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

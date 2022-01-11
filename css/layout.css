@@ -22,9 +22,12 @@
   flex-wrap: wrap;
 }
 
-.column-full,
-.column-half {
+.column-full {
   width: 100%;
+}
+
+.column-half {
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
