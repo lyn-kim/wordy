@@ -107,7 +107,7 @@ function openFlashCard(event) {
   if (data.currentStudyCard === null) {
     data.currentStudyCard = data.savedCard[savedCardIndex];
   } else {
-    data.currentStudyCard = data.savedCard[++savedCardIndex];
+    data.currentStudyCard = data.savedCard[savedCardIndex++];
   }
 }
 
