@@ -139,19 +139,26 @@ function goBackToWord(event) {
   switchView('flashcard-front');
 }
 
-// var wordList = document.querySelector('ul');
-// wordList.addEventListener('click', clickToOpenDeleteModal);
+var wordList = document.querySelector('.saved-word-list');
+wordList.addEventListener('click', toggleModal);
 
-// function clickToOpenDeleteModal(event) {
-//   console.log(event.target);
+function toggleModal(event) {
+  if (event.target.tagName !== 'I') {
+    return;
+  }
 
-//   if (event.target.tagName !== 'I') {
+  for (var i = 0; i < data.savedCard.length; i++) {
+    var parentElement = event.target.closest('li');
+    var specificId = parentElement.getAttribute('word-id');
+    var specificIdNumber = parseInt(specificId);
+    if (data.savedCard[i].wordId === specificIdNumber) {
 
-//   }
+      openDeleteModal();
+    }
+  }
+}
 
-//   for (var i = 0; i < savedCard.length; i++) {
-//     var parentElement = event.target.closest('li');
-//     var specificId = parentElement.getAttribute('word-id');
-//     var
-//   }
-// }
+var modalView = document.getElementById('modal-view');
+function openDeleteModal(event) {
+  modalView.className = 'row';
+}
