@@ -152,8 +152,9 @@ function toggleModal(event) {
     var specificId = parentElement.getAttribute('word-id');
     var specificIdNumber = parseInt(specificId);
     if (data.savedCard[i].wordId === specificIdNumber) {
-
       openDeleteModal();
+
+      data.deleting = data.savedCard[i];
     }
   }
 }
@@ -166,5 +167,19 @@ function openDeleteModal(event) {
 var cancelButton = document.querySelector('.cancel-btn');
 cancelButton.addEventListener('click', goToStudyList);
 
-// var deleteButton = document.querySelector('.confirm-btn');
-// deleteButton.addEventListener('click', deleteEntryFromDom);
+var deleteButton = document.querySelector('.delete-btn');
+deleteButton.addEventListener('click', deleteWordFromDom);
+
+function deleteWordFromDom(event) {
+  var deleting = data.deleting;
+  if (deleting !== null) {
+    var wordIndex = data.savedCard.findIndex(function (word) {
+      return word.entryId === deleting.wordId;
+    });
+    data.savedCard.splice(wordIndex, 1);
+    var currentWord = document.querySelector('[word-id="' + deleting.wordId + '"]');
+    currentWord.remove();
+  }
+  checkEmptyList();
+  goToStudyList();
+}
