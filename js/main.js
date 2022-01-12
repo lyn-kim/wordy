@@ -70,7 +70,11 @@ function generateWordDom(card) {
   var listItem = document.createElement('li');
   var wordText = document.createTextNode(card.word);
   listItem.appendChild(wordText);
-  listItem.className = 'saved-word';
+  listItem.className = 'saved-word relative';
+
+  var icon = document.createElement('i');
+  icon.className = 'fas fa-trash trash-icon';
+  listItem.appendChild(icon);
 
   var wordId = card.wordId;
   listItem.setAttribute('word-id', wordId);
@@ -91,8 +95,10 @@ var noWordMessage = document.querySelector('.message');
 function checkEmptyList() {
   if (data.savedCard.length === 0) {
     noWordMessage.className = 'message';
+    studyButton.className = 'hidden';
   } else {
     noWordMessage.className = 'message hidden';
+    studyButton.className = 'study-button';
   }
 }
 var savedCardIndex = 0;
@@ -133,4 +139,49 @@ var backButton = document.querySelector('.back-button');
 backButton.addEventListener('click', goBackToWord);
 function goBackToWord(event) {
   switchView('flashcard-front');
+}
+
+var wordList = document.querySelector('.saved-word-list');
+wordList.addEventListener('click', toggleModal);
+
+function toggleModal(event) {
+  if (event.target.tagName !== 'I') {
+    return;
+  }
+
+  for (var i = 0; i < data.savedCard.length; i++) {
+    var parentElement = event.target.closest('li');
+    var specificId = parentElement.getAttribute('word-id');
+    var specificIdNumber = parseInt(specificId);
+    if (data.savedCard[i].wordId === specificIdNumber) {
+      openDeleteModal();
+
+      data.deleting = data.savedCard[i];
+    }
+  }
+}
+
+var modalView = document.getElementById('modal-view');
+function openDeleteModal(event) {
+  modalView.className = 'row';
+}
+
+var cancelButton = document.querySelector('.cancel-btn');
+cancelButton.addEventListener('click', goToStudyList);
+
+var deleteButton = document.querySelector('.delete-btn');
+deleteButton.addEventListener('click', deleteWordFromDom);
+
+function deleteWordFromDom(event) {
+  var deleting = data.deleting;
+  if (deleting !== null) {
+    var wordIndex = data.savedCard.findIndex(function (word) {
+      return word.entryId === deleting.wordId;
+    });
+    data.savedCard.splice(wordIndex, 1);
+    var currentWord = document.querySelector('[word-id="' + deleting.wordId + '"]');
+    currentWord.remove();
+  }
+  checkEmptyList();
+  goToStudyList();
 }

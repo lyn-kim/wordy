@@ -8,11 +8,32 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <main>
+
+    <!-- delete confirmation modal -->
+    <div class="relative">
+      <div id="modal-view" class="row hidden" data-view="delete-modal">
+        <div class="modal-bg fixed">
+          <div class="modal-box modal-center">
+            <div class="row justify-center">
+              <p class="delete-msg">Are you sure you want to delete this word?</p>
+            </div>
+            <div class="row space-evenly">
+              <button type="button" class="cancel-btn">CANCEL</button>
+              <button type="button" class="delete-btn">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- navbar -->
     <div class="navbar">
       <div class="container">
@@ -27,7 +48,7 @@
     </div>
 
     <!-- main page with generate button -->
-    <div class="row" data-view="main-page">
+    <div class="row hidden" data-view="main-page">
       <div class="margin-auto">
         <h2 class="home-text">Let's get started:</h2>
         <div class="click-here-btn margin-auto">
@@ -61,11 +82,12 @@
 
     <!-- study list page -->
     <div class="container">
-      <div class="row hidden" data-view="study-list">
+      <div class="row" data-view="study-list">
         <div class="column-full">
           <h2 class="study-list-title">Study List</h2>
           <ul class="saved-word-list">
             <!-- DOM appends here -->
+            <!-- <li class="saved-word relative">Some Word<i class="fas fa-trash trash-icon"></i></li> -->
           </ul>
         </div>
         <div class="message">

@@ -6,7 +6,8 @@ var data = {
   savedCard: [],
   currentRandomCard: null,
   currentStudyCard: null,
-  nextWordId: 1
+  nextWordId: 1,
+  deleting: []
 };
 
 var previousInputJSON = localStorage.getItem('data');
