@@ -3,6 +3,10 @@
   font-family: "Varela Round", sans-serif;
 }
 
+.relative {
+  position: relative;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -234,4 +238,10 @@ ul.nav-list {
 .next-button-txt {
   color: #645a5a;
   font-size: 2rem;
+}
+
+.trash-icon {
+  position: absolute;
+  right: 15px;
+  top: 20px;
 }

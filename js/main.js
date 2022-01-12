@@ -70,7 +70,11 @@ function generateWordDom(card) {
   var listItem = document.createElement('li');
   var wordText = document.createTextNode(card.word);
   listItem.appendChild(wordText);
-  listItem.className = 'saved-word';
+  listItem.className = 'saved-word relative';
+
+  var icon = document.createElement('i');
+  icon.className = 'fas fa-trash trash-icon';
+  listItem.appendChild(icon);
 
   var wordId = card.wordId;
   listItem.setAttribute('word-id', wordId);
@@ -134,3 +138,20 @@ backButton.addEventListener('click', goBackToWord);
 function goBackToWord(event) {
   switchView('flashcard-front');
 }
+
+// var wordList = document.querySelector('ul');
+// wordList.addEventListener('click', clickToOpenDeleteModal);
+
+// function clickToOpenDeleteModal(event) {
+//   console.log(event.target);
+
+//   if (event.target.tagName !== 'I') {
+
+//   }
+
+//   for (var i = 0; i < savedCard.length; i++) {
+//     var parentElement = event.target.closest('li');
+//     var specificId = parentElement.getAttribute('word-id');
+//     var
+//   }
+// }
