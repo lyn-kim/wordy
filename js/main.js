@@ -162,3 +162,9 @@ var modalView = document.getElementById('modal-view');
 function openDeleteModal(event) {
   modalView.className = 'row';
 }
+
+var cancelButton = document.querySelector('.cancel-btn');
+cancelButton.addEventListener('click', goToStudyList);
+
+// var deleteButton = document.querySelector('.confirm-btn');
+// deleteButton.addEventListener('click', deleteEntryFromDom);
