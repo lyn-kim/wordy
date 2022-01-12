@@ -95,8 +95,10 @@ var noWordMessage = document.querySelector('.message');
 function checkEmptyList() {
   if (data.savedCard.length === 0) {
     noWordMessage.className = 'message';
+    studyButton.className = 'hidden';
   } else {
     noWordMessage.className = 'message hidden';
+    studyButton.className = 'study-button';
   }
 }
 var savedCardIndex = 0;
