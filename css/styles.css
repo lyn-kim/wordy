@@ -43,6 +43,7 @@
   margin: 0;
 }
 
+/* navbar */
 .navbar {
   background-color: #fdb900;
   height: 65px;
@@ -62,6 +63,7 @@ ul.nav-list {
   margin-left: 1.4rem;
 }
 
+/* home screen */
 .home-text {
   font-size: 34px;
   font-weight: 400;
@@ -88,10 +90,11 @@ ul.nav-list {
   font-size: 36px;
 }
 
+/* generated card view */
 .flashcard-word-container,
 .card-container {
   height: 590px;
-  margin-top: 30px;
+  margin-top: 2rem;
   padding: 1.5rem;
   border-radius: 18px;
 }
@@ -152,6 +155,7 @@ ul.nav-list {
   font-size: 2rem;
 }
 
+/* study list page */
 .study-list-title {
   font-size: 2.5rem;
   font-weight: 400;
@@ -202,14 +206,15 @@ ul.nav-list {
   display: flex;
   align-items: center;
   background-color: white;
-  height: 120px;
+  height: 7rem;
   max-width: calc(730px - 3rem);
 }
 
 [data-view="study-list"] {
-  margin-bottom: 150px;
+  margin-bottom: 9rem;
 }
 
+/* flashcard */
 .flip-button {
   width: 100%;
   background-color: #645a5a;
@@ -254,6 +259,7 @@ ul.nav-list {
   font-size: 2rem;
 }
 
+/* delete modal and delete feature */
 .trash-icon {
   position: absolute;
   right: 15px;
