@@ -56,6 +56,9 @@ function saveWord(event) {
   singleWord.prepend(generateWordDom(cardGenerated));
 }
 
+var newButton = document.querySelector('.new-button');
+newButton.addEventListener('click', generateWord);
+
 var homeButton = document.querySelector('.home-button');
 homeButton.addEventListener('click', goToHome);
 function goToHome(event) {
