@@ -224,6 +224,7 @@ ul.nav-list {
   font-size: 2rem;
 }
 
+.new-button,
 .back-button {
   width: 95%;
   background-color: #645a5a;
@@ -233,6 +234,7 @@ ul.nav-list {
   border-radius: 18px;
 }
 
+.new-button-txt,
 .back-button-txt {
   color: white;
   font-size: 2rem;

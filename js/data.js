@@ -7,7 +7,7 @@ var data = {
   currentRandomCard: null,
   currentStudyCard: null,
   nextWordId: 1,
-  deleting: []
+  deleting: null
 };
 
 var previousInputJSON = localStorage.getItem('data');
