@@ -176,7 +176,7 @@ function deleteWordFromDom(event) {
   var deleting = data.deleting;
   if (deleting !== null) {
     var wordIndex = data.savedCard.findIndex(function (word) {
-      return word.entryId === deleting.wordId;
+      return word.wordId === deleting.wordId;
     });
     data.savedCard.splice(wordIndex, 1);
     var currentWord = document.querySelector('[word-id="' + deleting.wordId + '"]');
