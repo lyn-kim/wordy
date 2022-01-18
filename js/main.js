@@ -118,6 +118,7 @@ function openFlashCard(event) {
   } else {
     data.currentStudyCard = data.savedCard[savedCardIndex++];
   }
+
 }
 
 var studyDefinition = document.querySelector('.study-def');
