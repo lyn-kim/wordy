@@ -109,30 +109,27 @@ var savedCardIndex = 0;
 var studyButton = document.querySelector('.study-button');
 studyButton.addEventListener('click', openFlashCard);
 function openFlashCard(event) {
+  data.currentStudyCard = data.savedCard[savedCardIndex];
+
+  var studyWord = document.querySelector('.study-word');
+  studyWord.textContent = data.currentStudyCard.word;
+
   switchView('flashcard-front');
-  var firstWord = document.querySelector('.study-word');
-  firstWord.textContent = data.savedCard[savedCardIndex].word;
-
-  if (data.currentStudyCard === null) {
-    data.currentStudyCard = data.savedCard[savedCardIndex];
-  } else {
-    data.currentStudyCard = data.savedCard[savedCardIndex++];
-  }
-
 }
 
 var studyDefinition = document.querySelector('.study-def');
 var flipButton = document.querySelector('.flip-button');
 flipButton.addEventListener('click', goToDefinition);
 function goToDefinition(event) {
-  switchView('flashcard-rear');
   studyDefinition.textContent = data.currentStudyCard.definition;
+  switchView('flashcard-rear');
 }
 
 var nextButton = document.querySelector('.next-button');
 nextButton.addEventListener('click', goToNextWord);
 function goToNextWord(event) {
-  switchView('flashcard-front');
+  savedCardIndex++;
+
   if (savedCardIndex >= data.savedCard.length) {
     savedCardIndex = 0;
   }
