@@ -37,13 +37,19 @@
   text-align: end;
 }
 
+/* navbar */
 .logo-font {
   font-family: pacifico, sans-serif;
   font-weight: 400;
   margin: 0;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* navbar */
+.nav-logo {
+  margin-top: 0;
+}
+
 .navbar {
   background-color: #fdb900;
   height: 65px;
@@ -61,6 +67,11 @@ ul.nav-list {
 .nav-links > a {
   text-decoration: none;
   margin-left: 1.4rem;
+  cursor: pointer;
+}
+
+.nav-links > a:hover {
+  text-decoration: underline;
 }
 
 /* home screen */
@@ -78,6 +89,7 @@ ul.nav-list {
   border: none;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+  cursor: pointer;
 }
 
 .click-here-btn:active {
@@ -192,6 +204,7 @@ ul.nav-list {
   margin-top: 1.7rem;
   height: 4.2rem;
   border-radius: 18px;
+  cursor: pointer;
 }
 
 .study-button-txt {
@@ -222,6 +235,7 @@ ul.nav-list {
   margin-top: 1.7rem;
   height: 4.2rem;
   border-radius: 18px;
+  cursor: pointer;
 }
 
 .flip-button-txt {
@@ -237,6 +251,7 @@ ul.nav-list {
   margin-top: 1.7rem;
   height: 4.2rem;
   border-radius: 18px;
+  cursor: pointer;
 }
 
 .new-button-txt,
@@ -252,6 +267,7 @@ ul.nav-list {
   margin-top: 1.7rem;
   height: 4.2rem;
   border-radius: 18px;
+  cursor: pointer;
 }
 
 .next-button-txt {
@@ -264,6 +280,7 @@ ul.nav-list {
   position: absolute;
   right: 15px;
   top: 20px;
+  cursor: pointer;
 }
 
 .modal-center {
@@ -305,6 +322,7 @@ ul.nav-list {
   border: none;
   border-radius: 7px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .delete-btn {
