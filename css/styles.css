@@ -334,3 +334,45 @@ ul.nav-list {
   background-color: #646463;
   color: white;
 }
+
+/* network connection msg and loading spinner */
+.loading-spinner {
+  width: 75px;
+  height: 75px;
+  border: 7px solid #584e4e;
+  border-bottom-color: #f2aa00;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 14rem;
+  z-index: 1;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.network-error-title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.connection-message {
+  margin: auto;
+  font-weight: 400;
+  line-height: 0.5rem;
+}

@@ -47,6 +47,18 @@
       </div>
     </div>
 
+    <!-- network error message page -->
+    <div class="container">
+      <div class="row hidden" data-view="network-error">
+        <div class="column-full">
+          <h2 class="network-error-title">Network Connection Issue</h2>
+        </div>
+        <div class="connection-message">
+          <p>Please check your internet connection and try again.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- main page with generate button -->
     <div class="row" data-view="main-page">
       <div class="margin-auto">
@@ -62,6 +74,7 @@
       <div class="row hidden" data-view="new-word">
         <!-- word card -->
         <div class="column-full card-container">
+          <div class="loading-spinner card-container-inner hidden"></div>
           <div class="row card-container-inner">
             <div class="column-full">
               <p class="generated-word"> </p>
