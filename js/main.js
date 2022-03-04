@@ -1,4 +1,3 @@
-
 var clickHereButton = document.querySelector('.click-here-btn');
 clickHereButton.addEventListener('click', generateWord);
 function generateWord(event) {
@@ -25,15 +24,32 @@ function switchView(dataView) {
 
 var wordElement = document.querySelector('.generated-word');
 var definitionElement = document.querySelector('.generated-def');
+var $loader = document.querySelector('.loading-spinner');
+
+function goToNetworkAlert() {
+  switchView('network-error');
+}
 
 function getNewWord() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://random-words-api.vercel.app/word');
   xhr.responseType = 'json';
+  $loader.className = 'loading-spinner card-container-inner';
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      var status = xhr.status;
+      if (status !== 200) {
+        goToNetworkAlert();
+      }
+    }
+  };
   xhr.addEventListener('load', function () {
     data.currentRandomCard = xhr.response[0];
     definitionElement.textContent = data.currentRandomCard.definition;
     wordElement.textContent = data.currentRandomCard.word;
+    $loader.className = 'loading-spinner card-container-inner hidden';
+
   });
   xhr.send();
 }
@@ -65,6 +81,8 @@ function goToHome(event) {
   switchView('main-page');
   checkEmptyList();
 }
+var logoButton = document.querySelector('.nav-logo');
+logoButton.addEventListener('click', goToHome);
 
 var listButton = document.querySelector('.list-button');
 listButton.addEventListener('click', goToStudyList);
@@ -93,6 +111,8 @@ function loadSingleWord(event) {
   }
   checkEmptyList();
 }
+var studyButton = document.querySelector('.study-button');
+studyButton.addEventListener('click', openFlashCard);
 
 var noWordMessage = document.querySelector('.message');
 function checkEmptyList() {
@@ -104,10 +124,9 @@ function checkEmptyList() {
     studyButton.className = 'study-button';
   }
 }
+
 var savedCardIndex = 0;
 
-var studyButton = document.querySelector('.study-button');
-studyButton.addEventListener('click', openFlashCard);
 function openFlashCard(event) {
   data.currentStudyCard = data.savedCard[savedCardIndex];
 
@@ -183,6 +202,6 @@ function deleteWordFromDom(event) {
     var currentWord = document.querySelector('[word-id="' + deleting.wordId + '"]');
     currentWord.remove();
   }
-  checkEmptyList();
   goToStudyList();
+  checkEmptyList();
 }
