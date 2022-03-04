@@ -1,23 +1,3 @@
-function goToNetworkAlert() {
-  switchView('network-error');
-}
-
-function testConnectivity() {
-  var newReq = new XMLHttpRequest();
-  newReq.open('GET', 'https://random-words-api.vercel.app/word');
-  newReq.onreadystatechange = function () {
-    if (newReq.readyState === XMLHttpRequest.DONE) {
-      var status = newReq.status;
-      if (status !== 200) {
-        goToNetworkAlert();
-      }
-    }
-  };
-  newReq.send();
-}
-
-testConnectivity();
-
 var clickHereButton = document.querySelector('.click-here-btn');
 clickHereButton.addEventListener('click', generateWord);
 function generateWord(event) {
@@ -46,12 +26,24 @@ var wordElement = document.querySelector('.generated-word');
 var definitionElement = document.querySelector('.generated-def');
 var $loader = document.querySelector('.loading-spinner');
 
+function goToNetworkAlert() {
+  switchView('network-error');
+}
+
 function getNewWord() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://random-words-api.vercel.app/word');
   xhr.responseType = 'json';
   $loader.className = 'loading-spinner card-container-inner';
 
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      var status = xhr.status;
+      if (status !== 200) {
+        goToNetworkAlert();
+      }
+    }
+  };
   xhr.addEventListener('load', function () {
     data.currentRandomCard = xhr.response[0];
     definitionElement.textContent = data.currentRandomCard.definition;
