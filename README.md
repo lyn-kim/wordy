@@ -4,7 +4,7 @@
 
 As an immigrant growing up in America, expanding my English vocabulary has been a lifelong pursuit. Without a doubt, opening up a dictionary to learn new words can be an overwhelming experience for many. As a result, I decided to use my newly accumulated JavaScript knowledge to bring Wordy to life in order to provide a more engaging and interactive word-learning experience for all. I'd like to dedicate this app to all my ESL folks!
 
-### Link to delpoyed project:
+### Link to deployed project:
 https://lyn-kim.github.io/Wordy/
 
 ### Technologies Used:
