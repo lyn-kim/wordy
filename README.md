@@ -12,6 +12,7 @@ https://lyn-kim.github.io/Wordy/
 * CSS3
 * JavaScript
 * AJAX
+* [Random Words API](https://github.com/mcnaveen/Random-Words-API)
 
 ### Features List:
 * User can generate a new random word and definition.
